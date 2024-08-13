@@ -4,7 +4,7 @@ https://iai-amami.com
 # 構成
 - ドメイン: お名前.com
 - インフラ: AWS (S3 + CloudFront + Route53 + ACM)
-- CI/CD: GitHub Actions
+- CI/CD: GitHub Actions 使用、mainブランチにpushされた際に S3 にデプロイ、CloudFront のキャッシュを削除
 
 ## 参考
 ### AWS　を使った静的サイトの構築
