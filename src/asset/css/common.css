@@ -1,0 +1,154 @@
+/*==============================================================*/
+/*      common      */
+/*==============================================================*/
+html {
+  scroll-behavior: smooth;
+}
+html body {
+  font-family: "Noto Sans JP", sans-serif;
+  font-family: "Noto Sans JP", sans-serif;
+}
+html head {
+  position: relative;
+  z-index: 2;
+}
+html main {
+  position: relative;
+  z-index: 1;
+  margin: 0 auto 0;
+  width: 100%;
+}
+html div {
+  transition: 0.3s;
+  margin: 0;
+}
+html .h1 {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  color: white;
+  border-radius: 3px;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 30px;
+  line-height: 45px;
+}
+@media (min-width: 750px) {
+  html .h1 {
+    font-size: 40px;
+    line-height: 60px;
+  }
+}
+html .h1_eng {
+  margin: 0 auto;
+  color: white;
+  letter-spacing: 0.08em;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+  font-family: "Noto Sans JP", sans-serif;
+  line-height: 25px;
+}
+html .h2 {
+  position: relative;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  color: #333333;
+  transition: 0.3s;
+  font-family: "Noto Sans JP", sans-serif;
+  display: block;
+  font-style: normal;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 34px;
+}
+@media (min-width: 750px) {
+  html .h2 {
+    font-size: 26px;
+    line-height: 38px;
+  }
+}
+html .h2:after {
+  content: "";
+  position: absolute;
+  top: 55.5px;
+  left: 0;
+  border-bottom: 4px solid rgb(183, 216, 213);
+  height: 4px;
+  width: 100%;
+  z-index: 10;
+}
+@media (min-width: 750px) {
+  html .h2:after {
+    top: 60px;
+  }
+}
+html a {
+  color: #333333;
+  font-family: "Noto Sans JP", sans-serif;
+  transition: 0.3s;
+}
+html p {
+  color: #333333;
+  transition: 0.3s;
+  font-family: "Noto Sans JP", sans-serif;
+  font-style: normal;
+  letter-spacing: 0.08em;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 28px;
+}
+@media (min-width: 750px) {
+  html p {
+    font-size: 16px;
+  }
+}
+html img {
+  transition: 0.3s;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+html .h2_eng {
+  position: relative;
+  color: #EF4357;
+  font-family: "Noto Sans JP", sans-serif;
+  display: block;
+  font-style: normal;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 18px;
+}
+@media (min-width: 750px) {
+  html .h2_eng {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+html .h2_eng:after {
+  content: "";
+  position: absolute;
+  top: 22px;
+  left: 0;
+  width: 100%;
+  border-bottom: 1.5px dashed rgb(206, 206, 206);
+}
+@media (min-width: 500px) {
+  html .br500 {
+    display: none;
+  }
+}
+@media (min-width: 750px) {
+  html .br750 {
+    display: none;
+  }
+}
+@media (min-width: 1000px) {
+  html .br1000 {
+    display: none;
+  }
+}

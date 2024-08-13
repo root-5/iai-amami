@@ -1,0 +1,210 @@
+/*==============================================================*/
+/*      footer      */
+/*==============================================================*/
+.footer {
+  margin-top: 100px;
+  display: block;
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.footer .img {
+  margin-top: 100px;
+  width: 80px;
+  height: 80px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-bottom: -1.5px;
+}
+.footer .background_1 {
+  padding-top: 50px;
+  background-color: #f9f9f9;
+}
+.footer .background_1 .inner {
+  margin: 0 auto;
+  max-width: 1100px;
+  width: 90%;
+}
+.footer .background_1 .inner .logo_link {
+  display: flex;
+  margin: -12px auto 20px;
+  width: 200px;
+  align-items: center;
+}
+.footer .background_1 .inner .logo_link .logo_img {
+  width: 55px;
+  height: 55px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.footer .background_1 .inner .logo_link .company_name {
+  display: block;
+  margin-left: 10px;
+  font-weight: 700;
+  font-size: 30px;
+}
+.footer .background_1 .inner .address {
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 19px;
+  letter-spacing: 0.08em;
+  text-align: center;
+}
+.footer .background_1 .inner .tel {
+  display: block;
+  margin: 0 auto;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 19px;
+  letter-spacing: 0.08em;
+  text-align: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.footer .background_1 .inner .tel:hover {
+  color: #EF4357;
+}
+.footer .background_1 .inner .nav {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 35px auto 10px;
+  justify-content: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 66px;
+}
+.footer .background_1 .inner .nav .border {
+  margin: auto 0;
+  width: 1px;
+  height: 25px;
+  border: 1px solid #D9D9D9;
+}
+.footer .background_1 .inner .nav .child {
+  margin: 14px 0;
+  text-align: center;
+  padding: 0px 15px;
+}
+@media (min-width: 750px) {
+  .footer .background_1 .inner .nav .child {
+    padding: 0px 36px;
+  }
+}
+.footer .background_1 .inner .nav .child:hover > .title {
+  color: #EF4357;
+}
+.footer .background_1 .inner .nav .child .title {
+  display: block;
+  margin: 0 auto 0;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.08em;
+  color: #333333;
+  white-space: nowrap;
+}
+@media (min-width: 750px) {
+  .footer .background_1 .inner .nav .child .title {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+.footer .background_1 .inner .nav .child .title_sub {
+  display: block;
+  margin: 0 auto;
+  font-weight: 500;
+  font-size: 8px;
+  line-height: 12px;
+  letter-spacing: 0.08em;
+  color: #EF4357;
+  white-space: nowrap;
+}
+@media (min-width: 750px) {
+  .footer .background_1 .inner .nav .child .title_sub {
+    font-size: 10px;
+    line-height: 14px;
+  }
+}
+.footer .background_1 .inner .nav .tel_insta {
+  display: flex;
+  margin-right: 0;
+  margin-left: 20px;
+  align-items: center;
+}
+.footer .background_1 .inner .nav .tel_insta .footer_insta_icon {
+  height: 25px;
+  width: 25px;
+}
+.footer .background_1 .inner .nav .tel_insta .mail {
+  margin-left: 17px;
+  height: 23px;
+  width: 30px;
+}
+.footer .background_1 .inner .top_link {
+  position: relative;
+  left: 90%;
+  top: 0%;
+  display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.footer .background_1 .inner .top_link .page_top_btn {
+  position: relative;
+  right: 0;
+  margin: 0 0 0 auto;
+  width: 40px;
+  height: 40px;
+  background: #FFFFFF;
+  border: 1px solid #EF4357;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+.footer .background_1 .inner .top_link .page_top_btn:hover {
+  background: #EF4357;
+}
+.footer .background_1 .inner .top_link .page_top_btn .line_0 {
+  position: absolute;
+  width: 14px;
+  height: 0px;
+  left: 12px;
+  top: 19px;
+  border-bottom: 1px solid #EF4357;
+  transform: rotate(-90deg);
+}
+.footer .background_1 .inner .top_link .page_top_btn .line_1 {
+  position: absolute;
+  width: 6px;
+  height: 0px;
+  left: 14px;
+  top: 13px;
+  border-bottom: 1px solid #EF4357;
+  transform: rotate(-45deg);
+}
+.footer .background_1 .inner .top_link .page_top_btn .line_2 {
+  position: absolute;
+  width: 6px;
+  height: 0px;
+  left: 18px;
+  top: 13px;
+  border-bottom: 1px solid #EF4357;
+  transform: rotate(45deg);
+}
+.footer .background_1 .inner .top_link .page_top_btn:hover > .line {
+  border-bottom: 1px solid white;
+}
+.footer .background_1 .inner .copyright_text {
+  display: block;
+  margin: 10px auto 0;
+  padding-bottom: 17px;
+  color: #969494;
+  text-align: center;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 12px;
+  font-family: "Noto Sans JP", sans-serif;
+  line-height: 17px;
+}

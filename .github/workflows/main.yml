@@ -1,0 +1,33 @@
+name: Upload to S3
+
+on:
+    push:
+        branches:
+            - main
+
+permissions:
+    id-token: write
+    contents: read
+
+jobs:
+    upload:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v3
+            - name: Set up AWS Credentials
+              uses: aws-actions/configure-aws-credentials@v4
+              with:
+                  role-to-assume: 'arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/${{ secrets.AWS_ROLE_NAME }}'
+                  aws-region: 'us-east-1'
+
+            # src　配下のファイルを S3 にアップロード
+            - name: Upload to S3
+              run: |
+                  aws s3 cp src s3://${{ secrets.S3_BUCKET_NAME }} --recursive
+
+            # CloudFront のキャッシュを削除
+            - name: Invalidate CloudFront cache
+              run: |
+                  aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"

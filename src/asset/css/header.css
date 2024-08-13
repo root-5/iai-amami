@@ -1,0 +1,233 @@
+/*==============================================================*/
+/*      header      */
+/*==============================================================*/
+.header {
+  position: relative;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  z-index: 1000;
+  transform: translate(-50%, 0);
+  width: 100%;
+  height: 66px;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.6784313725);
+}
+.header .inner {
+  display: flex;
+  margin: 0 auto;
+  max-width: 1100px;
+  width: 90%;
+  height: 66px;
+  align-items: center;
+}
+.header .inner .logo_link {
+  display: flex;
+  align-items: center;
+}
+.header .inner .logo_link .logo_img {
+  width: 50px;
+  height: 50px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.header .inner .logo_link .company_name {
+  display: block;
+  margin-left: 10px;
+  color: #333333;
+  font-weight: 700;
+  font-size: 30px;
+}
+.header .inner .nav {
+  display: none;
+  align-items: center;
+  height: 66px;
+}
+@media (min-width: 1150px) {
+  .header .inner .nav {
+    display: flex;
+    margin: 0 0 0 auto;
+  }
+}
+.header .inner .nav .border {
+  width: 1px;
+  height: 25px;
+  border-left: 1px solid #333333;
+}
+.header .inner .nav .child {
+  text-align: center;
+  align-items: center;
+  padding: 0px 36px;
+}
+.header .inner .nav .child:hover > .title {
+  color: #EF4357;
+}
+.header .inner .nav .child .title {
+  display: block;
+  margin: 0 auto 0;
+  color: #333333;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+.header .inner .nav .child .title_sub {
+  display: block;
+  margin: 0 auto;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 14px;
+  letter-spacing: 0.08em;
+  color: #EF4357;
+  white-space: nowrap;
+}
+.header .inner .tel_insta {
+  display: flex;
+  margin-right: 70px;
+  margin-left: auto;
+  align-items: center;
+}
+@media (min-width: 1150px) {
+  .header .inner .tel_insta {
+    margin-left: 20px;
+  }
+}
+.header .inner .tel_insta .insta_link:hover {
+  transform: translateY(-7px);
+}
+.header .inner .tel_insta .insta_link .insta {
+  height: 25px;
+  width: 25px;
+}
+.header .inner .tel_insta .mail_link {
+  width: 30px;
+  margin-left: 17px;
+}
+.header .inner .tel_insta .mail_link:hover {
+  transform: translateY(-7px);
+}
+.header .inner .tel_insta .mail_link .mail {
+  height: 23px;
+  width: 30px;
+}
+
+.change_color {
+  background-color: rgba(255, 255, 255, 0.647);
+}
+
+.hamburger {
+  display: block;
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  right: 0%;
+  margin: 0;
+  width: 75px;
+  height: 42px;
+  height: 66px;
+  cursor: pointer;
+  text-align: center;
+}
+@media (min-width: 1150px) {
+  .hamburger {
+    display: none;
+  }
+}
+.hamburger .span {
+  display: block;
+  position: absolute;
+  width: 40px;
+  height: 3px;
+  left: 17px;
+  background: #333333;
+  transition: 0.3s ease-in-out;
+}
+.hamburger .span:nth-child(1) {
+  top: 6px;
+  top: 18px;
+}
+.hamburger .span:nth-child(2) {
+  top: 19px;
+  top: 31px;
+}
+.hamburger .span:nth-child(3) {
+  top: 32px;
+  top: 44px;
+}
+.hamburger.active .span:nth-child(1) {
+  top: 30px;
+  left: 16px;
+  transform: rotate(-45deg);
+}
+.hamburger.active .span:nth-child(2),
+.hamburger.active .span:nth-child(3) {
+  top: 30px;
+  transform: rotate(45deg);
+}
+
+.globalMenuSp {
+  position: fixed;
+  z-index: 1500;
+  top: 0;
+  left: 0;
+  color: #333333;
+  background: rgba(255, 255, 255, 0.916);
+  text-align: center;
+  transform: translateX(110%);
+  transition: all 0.6s;
+  width: 100%;
+}
+@media (min-width: 1150px) {
+  .globalMenuSp {
+    display: none;
+  }
+}
+.globalMenuSp .ul {
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+}
+.globalMenuSp .ul .li {
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+  border-bottom: 1px solid rgb(108, 108, 108);
+}
+.globalMenuSp .ul .li:hover {
+  background: #e5e5e5;
+}
+.globalMenuSp .ul .li:hover > .link > .title {
+  color: #333;
+}
+.globalMenuSp .ul .li:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+.globalMenuSp .ul .li .link {
+  display: block;
+  color: #000;
+  padding: 1em 0;
+  text-decoration: none;
+}
+.globalMenuSp .ul .li .link .title {
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+}
+.globalMenuSp .ul .li .link .title_sub {
+  color: #EF4357;
+  font-family: "Noto Sans JP", sans-serif;
+  display: block;
+  font-style: normal;
+  text-align: center;
+  letter-spacing: 0.08em;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+}
+.globalMenuSp.active {
+  transform: translateX(0%);
+}

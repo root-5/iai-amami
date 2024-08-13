@@ -1,0 +1,164 @@
+@charset "UTF-8";
+@use "function" as f;
+@use "variables" as v;
+
+/*==============================================================*/
+/*      common      */
+/*==============================================================*/
+html {
+    scroll-behavior: smooth;
+
+    body {
+        font-family: v.$font_0;
+        font-family: v.$font_1;
+    }
+
+    head {
+        position: relative;
+        z-index: 2;
+    }
+
+    main {
+        position: relative;
+        z-index: 1;
+        margin: 0 auto 0;
+        width: 100%;
+    }
+
+    div {
+        transition: v.$transition;
+        margin: 0;
+    }
+
+    .h1 {
+        width: fit-content;
+        margin: 0 auto;
+        color: v.$color_w;
+        border-radius: 3px;
+        letter-spacing: 0.08em;
+        font-weight: 700;
+        font-style: normal;
+        font-size: 30px;
+        line-height: 45px;
+
+        @include f.mq750 {
+            font-size: 40px;
+            line-height: 60px;
+        }
+    }
+
+    .h1_eng {
+        margin: 0 auto;
+        color: v.$color_w;
+        letter-spacing: 0.08em;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 20px;
+        font-family: v.$font_1;
+        line-height: 25px;
+    }
+
+    .h2 {
+        position: relative;
+        width: fit-content;
+        color: v.$color_0;
+        transition: v.$transition;
+        font-family: v.$font_0;
+        display: block;
+        font-style: normal;
+        letter-spacing: 0.08em;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 34px;
+
+        @include f.mq750 {
+            font-size: 26px;
+            line-height: 38px;
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 55.5px;
+            left: 0;
+            border-bottom: 4px solid rgb(183, 216, 213);
+            height: 4px;
+            width: 100%;
+            z-index: 10;
+
+            @include f.mq750 {
+                top: 60px;
+            }
+        }
+    }
+
+    a {
+        color: v.$color_0;
+        font-family: v.$font_0;
+        transition: v.$transition;
+    }
+
+    p {
+        color: v.$color_0;
+        transition: v.$transition;
+        font-family: v.$font_0;
+        font-style: normal;
+        letter-spacing: 0.08em;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 28px;
+
+        @include f.mq750 {
+            font-size: 16px;
+        }
+    }
+
+    img {
+        transition: v.$transition;
+        object-fit: cover;
+    }
+
+    .h2_eng {
+        position: relative;
+        color: v.$color_1;
+        font-family: v.$font_1;
+        display: block;
+        font-style: normal;
+        letter-spacing: 0.08em;
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 18px;
+
+        @include f.mq750 {
+            font-size: 14px;
+            line-height: 20px;
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 22px;
+            left: 0;
+            width: 100%;
+            border-bottom: 1.5px dashed rgb(206, 206, 206);
+        }
+    }
+
+    .br500 {
+        @include f.mq500 {
+            display: none;
+        }
+    }
+
+    .br750 {
+        @include f.mq750 {
+            display: none;
+        }
+    }
+
+    .br1000 {
+        @include f.mq1000 {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,470 @@
+@charset "UTF-8";
+
+@use "function" as f;
+@use "variables" as v;
+
+
+
+/*==============================================================*/
+/*      main      */
+/*==============================================================*/
+
+
+
+//==============================================================
+//      top-wrap
+.top_flex {
+    display: flex;
+
+    .top_wrap {
+        position: relative;
+        margin-top: 66px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        top: 0;
+        width: 100%;
+        height: 550px;
+        animation: image_anime 25s infinite;
+
+        @keyframes image_anime {
+            0% {
+                background-image: url(/asset/img/CSK_rainbowb.jpg);
+                background-position: left;
+                /* 背景画像1を指定 */
+            }
+
+            25% {
+                background-image: url(/asset/img/S__3219545.jpeg);
+                background-position: center;
+                /* 背景画像2を指定 */
+            }
+
+            50% {
+                background-image: url(/asset/img/24791206_mのコピー.jpg);
+                background-position: right;
+
+                /* 背景画像1を指定 */
+            }
+            75% {
+                background-image: url(/asset/img/S__5939222のコピー.jpg);
+                background-position: center;
+
+                /* 背景画像1を指定 */
+            }
+
+            100% {
+                background-image: url(/asset/img/CSK_rainbowb.jpg);
+                background-position: left;
+
+                /* 背景画像1を指定 */
+            }
+        }
+
+        @include f.mq750 {
+            height: 630px;
+        }
+
+        @include f.mq(1100) {
+            width: 100%;
+        }
+
+        .textarea {
+            position: absolute;
+            top: 45%;
+            left: 5%;
+
+            @include f.mq(1000) {
+                left: 17%;
+            }
+
+            :root {
+                --delay: 0;
+                --duration: 800ms;
+                --iterations: 1;
+            }
+
+            .reveal-text,
+            .reveal-text::after {
+                animation-delay: var(--animation-delay, 2s);
+                animation-iteration-count: var(--iterations, 1);
+                animation-duration: var(--duration, 800ms);
+                animation-fill-mode: both;
+                animation-timing-function: cubic-bezier(0.0, 0.0, 0.2, 1);
+            }
+
+            .reveal-text {
+                font-family: v.$font_0;
+                --animation-delay: var(--delay, 0);
+                --animation-duration: var(--duration, 800ms);
+                --animation-iterations: var(--iterations, 1);
+                padding: 0 15px;
+                position: relative;
+                font-size: 27px;
+                line-height: 45px;
+                animation-name: clip-text;
+                color: #FFF;
+                background-color: #72b0f88f;
+                white-space: nowrap;
+                text-shadow: #000000ed 1px 1px 10px;
+
+                @include f.mq500 {
+                    font-size: 27px;
+                    line-height: 45px;
+                }
+
+                @include f.mq(850) {
+                    font-size: 40px;
+                    line-height: 55px;
+                }
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    z-index: 999;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background-color: #fafafa;
+                    transform: scaleX(0);
+                    transform-origin: 0 50%;
+                    pointer-events: none;
+                    animation-name: text-revealer;
+                }
+            }
+
+            @keyframes clip-text {
+                from {
+                    clip-path: inset(0 100% 0 0);
+                }
+
+                to {
+                    clip-path: inset(0 0 0 0);
+                }
+            }
+
+            @keyframes text-revealer {
+
+                0%,
+                50% {
+                    transform-origin: 0 50%;
+                }
+
+                60%,
+                100% {
+                    transform-origin: 100% 50%;
+                }
+
+                60% {
+                    transform: scaleX(1);
+                }
+
+                100% {
+                    transform: scaleX(0);
+                }
+            }
+
+            .br {
+                @include f.mq500 {
+                    display: none;
+                }
+            }
+
+            .reveal-text_2 {
+                font-size: 14px;
+                line-height: 23px;
+                --animation-delay: var(--delay, 0.3s);
+
+                @include f.mq500 {
+                    font-size: 16px;
+                    line-height: 25px;
+                }
+
+                @include f.mq(850) {
+                    font-size: 20px;
+                    line-height: 35px;
+                }
+            }
+        }
+
+
+        .scroll {
+            position: relative;
+            top: 80%;
+            left: calc(90% - 170px);
+            width: 300px;
+            height: 100px;
+            transform: rotate(90deg);
+
+            @include f.mq1000 {
+                // left: -5%;
+            }
+
+            .scroll_text {
+                position: absolute;
+                color: v.$color_w;
+                top: 0;
+                left: 0;
+            }
+
+            .vector {
+                position: relative;
+                top: 5px;
+                left: 0;
+
+                .line_0 {
+                    position: absolute;
+                    width: 200px;
+                    height: 4.5px;
+                    left: 0;
+                    top: 18px;
+                    border-bottom: 2px solid v.$color_w;
+                }
+
+                .line_1 {
+                    position: absolute;
+                    left: 190px;
+                    top: 17.5px;
+                    width: 12px;
+                    height: 1px;
+                    border-bottom: 2px solid v.$color_w;
+                    transform: rotate(40deg);
+                }
+            }
+        }
+    }
+}
+
+//==============================================================
+//      section_common
+
+.button_link {
+    display: block;
+    margin: 0 auto;
+    width: fit-content;
+    border-radius: 120px;
+
+    .button {
+        position: relative;
+        max-width: 384px;
+        width: 300px;
+        height: 46px;
+        background: #FFFFFF;
+        border: 1px solid #D0D0D0;
+        border-radius: 120px;
+
+        @include f.mq(1100) {
+            margin: 40px 0 0 0;
+        }
+
+        .button_p {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: fit-content;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 20px;
+            color: v.$color_0;
+            transform: translate(-50%, -50%);
+        }
+
+        .vector {
+            position: absolute;
+            left: 84%;
+
+            .line_0 {
+                position: absolute;
+                width: 32.5px;
+                height: 4.5px;
+                left: 0;
+                top: 18px;
+                border-bottom: 1px solid #333333;
+            }
+
+            .line_1 {
+                position: absolute;
+                left: 26px;
+                top: 19.5px;
+                width: 8px;
+                height: 1px;
+                border-bottom: 0.3px solid #333333;
+                transform: rotate(40deg);
+            }
+        }
+
+        &:hover {
+            background-color: v.$color_1;
+            border: 1px solid #333333;
+
+            .button_p {
+                color: v.$color_w;
+            }
+
+            .line {
+                border-bottom: 0.3px solid v.$color_w;
+            }
+        }
+    }
+}
+
+
+
+//==============================================================
+//          about
+
+.about {
+    margin-top: 60px;
+
+    //background-color や border 指定に使う
+    @include f.mq(1100) {
+        background: linear-gradient(90deg, #ffffff00 0%, #ffffff00 50%, #f9f9f9 50%, #f9f9f9 100%);
+        padding: 0 80px;
+        margin-top: 0;
+    }
+
+    .inner {
+        margin: 0 auto;
+        width: 90%;
+        align-items: center;
+
+        @include f.mq(1100) {
+            display: flex;
+            height: 600px;
+            max-width: v.$max_width_section;
+            width: 90%;
+        }
+
+        .img {
+            display: block;
+            margin: 0 auto;
+            aspect-ratio: 5 / 3;
+            width: 100%;
+            z-index: 5;
+
+            @include f.mq(1100) {
+                margin: 0;
+                height: auto;
+                width: 50%;
+                max-width: 604px;
+                height: 391px;
+            }
+        }
+
+        .textarea {
+            margin: 0px;
+            padding: 30px 5%;
+            width: 100%;
+            background-color: #f9f9f9;
+
+            @include f.mq750 {
+                padding: 40px 5%;
+            }
+
+            @include f.mq(1100) {
+                padding-top: 40px;
+                padding-right: 0;
+                padding-left: 40px;
+                margin-top: 0;
+                width: 50%;
+            }
+
+            .p {
+                padding-top: 20px;
+
+                @include f.mq750 {
+                    padding-top: 40px;
+                }
+
+                @include f.mq(1100) {
+                    padding-top: 30px;
+                }
+            }
+
+            .button {
+                margin: 30px auto 0;
+            }
+        }
+    }
+}
+
+
+//==============================================================
+//      company
+
+.company {
+    margin-top: 60px;
+
+    //background-color や border 指定に使う
+    @include f.mq(1100) {
+        margin-top: 0;
+        background: linear-gradient(90deg, #f9f9f9 0%, #f9f9f9 50%, #ffffff00 50%, #ffffff00 100%);
+        padding: 0 80px;
+    }
+
+    .inner {
+        margin: 0 auto;
+        width: 90%;
+        align-items: center;
+
+        @include f.mq(1100) {
+            display: flex;
+            flex-direction: row-reverse;
+            height: 600px;
+            max-width: v.$max_width_section;
+            width: 90%;
+        }
+
+        .img {
+            display: block;
+            margin: 0 auto;
+            width: 100%;
+            z-index: 5;
+            aspect-ratio: 5 / 3;
+
+            @include f.mq(1100) {
+                margin: 0;
+                height: auto;
+                width: 50%;
+                max-width: 604px;
+                height: 391px;
+            }
+        }
+
+        .textarea {
+            margin: 0px;
+            padding: 30px 5%;
+            width: 100%;
+            background-color: #f9f9f9;
+
+            @include f.mq750 {
+                padding: 40px 5%;
+            }
+
+            @include f.mq(1100) {
+                padding-top: 40px;
+                padding-left: 0;
+                padding-right: 40px;
+                margin-top: 0;
+                width: 50%;
+            }
+
+            .p {
+                padding-top: 20px;
+
+                @include f.mq750 {
+                    padding-top: 40px;
+                }
+
+                @include f.mq(1100) {
+                    padding-top: 30px;
+                }
+            }
+
+            .button {
+                margin: 30px auto 0;
+            }
+        }
+    }
+}

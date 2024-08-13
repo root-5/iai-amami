@@ -1,0 +1,303 @@
+@charset "UTF-8";
+/*==============================================================*/
+/*      main      */
+/*==============================================================*/
+.top_wrap {
+  position: relative;
+  margin-top: 66px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(../img/24791206_m.jpg);
+  top: 0;
+  width: 100%;
+  height: 388px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.top_wrap .textarea {
+  position: absolute;
+  top: 45%;
+  left: 5%;
+}
+@media (min-width: 850px) {
+  .top_wrap .textarea {
+    left: 17%;
+  }
+}
+.top_wrap .textarea :root {
+  --delay: 0;
+  --duration: 800ms;
+  --iterations: 1;
+}
+.top_wrap .textarea .reveal-text,
+.top_wrap .textarea .reveal-text::after {
+  -webkit-animation-delay: var(--animation-delay, 2s);
+          animation-delay: var(--animation-delay, 2s);
+  -webkit-animation-iteration-count: var(--iterations, 1);
+          animation-iteration-count: var(--iterations, 1);
+  -webkit-animation-duration: var(--duration, 800ms);
+          animation-duration: var(--duration, 800ms);
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+          animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+.top_wrap .textarea .reveal-text {
+  --animation-delay: var(--delay, 0);
+  --animation-duration: var(--duration, 800ms);
+  --animation-iterations: var(--iterations, 1);
+  position: relative;
+  font-size: 25px;
+  line-height: 35px;
+  -webkit-animation-name: clip-text;
+          animation-name: clip-text;
+  color: #FFF;
+  background-color: rgba(114, 176, 248, 0.5607843137);
+  white-space: nowrap;
+  text-shadow: rgba(0, 0, 0, 0.9294117647) 1px 1px 10px;
+  padding: 0 15px;
+}
+@media (min-width: 500px) {
+  .top_wrap .textarea .reveal-text {
+    font-size: 30px;
+    line-height: 45px;
+  }
+}
+@media (min-width: 850px) {
+  .top_wrap .textarea .reveal-text {
+    font-size: 40px;
+    line-height: 50px;
+  }
+}
+.top_wrap .textarea .reveal-text::after {
+  content: "";
+  position: absolute;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fafafa;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  pointer-events: none;
+  -webkit-animation-name: text-revealer;
+          animation-name: text-revealer;
+}
+@-webkit-keyframes clip-text {
+  from {
+    -webkit-clip-path: inset(0 100% 0 0);
+            clip-path: inset(0 100% 0 0);
+  }
+  to {
+    -webkit-clip-path: inset(0 0 0 0);
+            clip-path: inset(0 0 0 0);
+  }
+}
+@keyframes clip-text {
+  from {
+    -webkit-clip-path: inset(0 100% 0 0);
+            clip-path: inset(0 100% 0 0);
+  }
+  to {
+    -webkit-clip-path: inset(0 0 0 0);
+            clip-path: inset(0 0 0 0);
+  }
+}
+@-webkit-keyframes text-revealer {
+  0%, 50% {
+    transform-origin: 0 50%;
+  }
+  60%, 100% {
+    transform-origin: 100% 50%;
+  }
+  60% {
+    transform: scaleX(1);
+  }
+  100% {
+    transform: scaleX(0);
+  }
+}
+@keyframes text-revealer {
+  0%, 50% {
+    transform-origin: 0 50%;
+  }
+  60%, 100% {
+    transform-origin: 100% 50%;
+  }
+  60% {
+    transform: scaleX(1);
+  }
+  100% {
+    transform: scaleX(0);
+  }
+}
+.top_wrap .textarea .reveal-text_2 {
+  font-size: 13px;
+  line-height: 20px;
+  --animation-delay: var(--delay, 0.3s);
+}
+@media (min-width: 500px) {
+  .top_wrap .textarea .reveal-text_2 {
+    font-size: 16px;
+    line-height: 25px;
+  }
+}
+@media (min-width: 850px) {
+  .top_wrap .textarea .reveal-text_2 {
+    font-size: 20px;
+    line-height: 35px;
+  }
+}
+
+/*==============================================================*/
+/*      セクション　（flex　画像 左 width50%）      */
+/*==============================================================*/
+.business {
+  margin-top: 60px;
+  width: 100%;
+  overflow: hidden;
+}
+@media (min-width: 1000px) {
+  .business {
+    margin-top: 100px;
+    height: 500px;
+  }
+}
+.business .inner {
+  margin: 0 auto;
+  width: 90%;
+  max-width: 1100px;
+}
+.business .inner .flex {
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 1000px) {
+  .business .inner .flex {
+    flex-direction: row;
+  }
+}
+.business .inner .flex .left {
+  width: 100%;
+}
+@media (min-width: 1000px) {
+  .business .inner .flex .left {
+    width: 50%;
+  }
+}
+.business .inner .flex .left .img {
+  width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+@media (min-width: 1000px) {
+  .business .inner .flex .left .img {
+    width: 50vw;
+    margin-right: 0;
+    max-height: 500px;
+    margin-left: calc(100% - 50vw);
+  }
+}
+.business .inner .flex .right {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding-right: 0%;
+  padding-left: 0%;
+}
+@media (min-width: 1000px) {
+  .business .inner .flex .right {
+    padding-right: 7%;
+    padding-left: 7%;
+    width: 50%;
+  }
+}
+.business .inner .flex .right .textarea {
+  width: 100%;
+}
+.business .inner .flex .right .textarea .h2 {
+  margin-top: 40px;
+}
+@media (min-width: 1000px) {
+  .business .inner .flex .right .textarea .h2 {
+    margin-top: 0px;
+  }
+}
+.business .inner .flex .right .textarea .h2_eng {
+  position: relative;
+  display: block;
+}
+.business .inner .flex .right .textarea .bar {
+  margin-top: 20px;
+  border-bottom: 1px solid #333333;
+}
+@media (min-width: 1000px) {
+  .business .inner .flex .right .textarea .bar {
+    margin-top: 30px;
+  }
+}
+.business .inner .flex .right .textarea .text {
+  margin-top: 25px;
+}
+@media (min-width: 1000px) {
+  .business .inner .flex .right .textarea .text {
+    margin-top: 40px;
+  }
+}
+.business .inner .flex .right .textarea .button {
+  margin-top: 30px;
+}
+@media (min-width: 1000px) {
+  .business .inner .flex .right .textarea .button {
+    margin-top: 40px;
+  }
+}
+
+.example {
+  margin-top: 60px;
+  width: 100%;
+}
+@media (min-width: 1000px) {
+  .example {
+    margin-top: 100px;
+  }
+}
+.example .inner {
+  margin: 0 auto;
+  max-width: 1100px;
+  width: 90%;
+}
+.example .inner .flex {
+  display: flex;
+  gap: 4%;
+  flex-wrap: wrap;
+}
+.example .inner .flex .card {
+  margin-top: 30px;
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  box-shadow: 0 10px 10px 0 #CCC;
+}
+@media (min-width: 750px) {
+  .example .inner .flex .card {
+    width: 48%;
+  }
+}
+.example .inner .flex .card img {
+  width: 100%;
+  aspect-ratio: 4/3;
+}
+.example .inner .flex .card .textarea {
+  padding: 15px 20px;
+}
+.example .inner .flex .card .textarea .card_title {
+  padding-bottom: 10px;
+  font-size: 20px;
+  font-weight: 700;
+}

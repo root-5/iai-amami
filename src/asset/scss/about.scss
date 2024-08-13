@@ -1,0 +1,442 @@
+@charset "UTF-8";
+@use "function" as f;
+@use "variables" as v;
+
+/*==============================================================*/
+/*      main      */
+/*==============================================================*/
+//==============================================================
+//      top-wrap
+.top_wrap {
+    position: relative;
+    margin-top: 66px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position: center 30%;
+    background-image: url(../img/S__5939219のコピー.jpg);
+    top: 0;
+    width: 100%;
+    height: 388px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .textarea {
+        position: absolute;
+        top: 45%;
+        left: 5%;
+
+        @include f.mq(850) {
+            left: 17%;
+        }
+
+        :root {
+            --delay: 0;
+            --duration: 800ms;
+            --iterations: 1;
+        }
+
+        .reveal-text,
+        .reveal-text::after {
+            animation-delay: var(--animation-delay, 2s);
+            animation-iteration-count: var(--iterations, 1);
+            animation-duration: var(--duration, 800ms);
+            animation-fill-mode: both;
+            animation-timing-function: cubic-bezier(0.0, 0.0, 0.2, 1);
+        }
+
+        .reveal-text {
+            --animation-delay: var(--delay, 0);
+            --animation-duration: var(--duration, 800ms);
+            --animation-iterations: var(--iterations, 1);
+            position: relative;
+            font-size: 25px;
+            line-height: 35px;
+            animation-name: clip-text;
+            color: #FFF;
+            background-color: #72b0f88f;
+            white-space: nowrap;
+            text-shadow: #000000ed 1px 1px 10px;
+            padding: 0 15px;
+
+            @include f.mq500 {
+                font-size: 30px;
+                line-height: 45px;
+            }
+
+            @include f.mq(850) {
+                font-size: 40px;
+                line-height: 50px;
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                z-index: 999;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: #fafafa;
+                transform: scaleX(0);
+                transform-origin: 0 50%;
+                pointer-events: none;
+                animation-name: text-revealer;
+            }
+        }
+
+        @keyframes clip-text {
+            from {
+                clip-path: inset(0 100% 0 0);
+            }
+
+            to {
+                clip-path: inset(0 0 0 0);
+            }
+        }
+
+        @keyframes text-revealer {
+
+            0%,
+            50% {
+                transform-origin: 0 50%;
+            }
+
+            60%,
+            100% {
+                transform-origin: 100% 50%;
+            }
+
+            60% {
+                transform: scaleX(1);
+            }
+
+            100% {
+                transform: scaleX(0);
+            }
+        }
+
+        .reveal-text_2 {
+            font-size: 13px;
+            line-height: 20px;
+            --animation-delay: var(--delay, 0.3s);
+
+            @include f.mq500 {
+                font-size: 16px;
+                line-height: 25px;
+            }
+
+            @include f.mq(850) {
+                font-size: 20px;
+                line-height: 35px;
+            }
+        }
+    }
+}
+
+//==============================================================
+//      greeting
+.greeting {
+    margin-top: 40px;
+    width: 100%;
+    overflow: hidden;
+
+    @include f.mq1000 {
+        margin-top: 60px;
+    }
+
+    .inner {
+        margin: 0 auto;
+        width: 90%;
+        max-width: v.$max_width_section;
+
+        .h2 {
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        .h2_eng {
+            position: relative;
+            text-align: center;
+        }
+
+        .flex {
+            display: flex;
+            margin-top: 30px;
+            flex-direction: column;
+
+            @include f.mq1000 {
+                margin-top: 45px;
+                flex-direction: row;
+            }
+
+            .left {
+                width: 100%;
+
+                @include f.mq1000 {
+                    width: 46%; //変更する場所
+                }
+
+                .img {
+                    width: 100%; //変更する場所
+                    vertical-align: bottom;
+
+                    @include f.mq1000 {
+                        width: 100%; //変更する場所
+                        height: auto;
+                        margin-right: 0;
+                        // margin-left: calc(50% - 50vw);
+                    }
+                }
+            }
+
+            .right {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                margin-top: 20px;
+
+                @include f.mq1000 {
+                    margin-top: 0;
+                    margin-left: 8%;
+                    padding-left: 0;
+                    padding-right: 0%; //変更する場所
+                    width: 46%; //変更する場所
+                }
+
+                .textarea {
+                    width: 100%;
+                    margin-top: 20px;
+
+                    @include f.mq1000 {
+                        margin-top: 0;
+                    }
+
+                    .text {
+
+                        // margin-top: 25px; //変更する場所
+                        @include f.mq1000 {
+                            // margin-top: 40px; //変更する場所
+                        }
+                    }
+
+                    .ceo {
+                        margin-top: 40px;
+                        font-family: 'Noto Sans JP';
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 14px;
+                        line-height: 20px;
+                        white-space: nowrap;
+                        text-align: right;
+                        letter-spacing: 0.05em;
+                        color: v.$color_0;
+
+                        @include f.mq500 {
+                            font-size: 16px;
+                            line-height: 24px;
+                        }
+
+                        @include f.mq1000 {
+                            font-size: 20px;
+                            line-height: 29px;
+                            letter-spacing: 0.08em;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//==============================================================
+//      about_us
+.about {
+    //--------------------------------------------------
+    background-image: url(../img/25021883_m.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    // padding: 60px 0 84px;
+    //--------------------------------------------------
+    margin-top: 60px;
+
+    @include f.mq1000() {
+        margin-top: 100px;
+        // padding: 80px 0 100px;
+    }
+
+    .inner {
+        flex-direction: column;
+        margin: 0 auto;
+        padding: 40px 0;
+        width: 90%;
+        max-width: 1100px;
+
+        @include f.mq1000() {
+            padding: 65px 0 70px;
+            width: 100%;
+        }
+
+        .white {
+            background-color: #fafafaad;
+            padding-bottom: 40px;
+        }
+
+        .h2_div {
+            margin: 0 auto;
+            padding-top: 25px;
+            text-align: center;
+
+            @include f.mq1000() {
+                padding-top: 35px;
+            }
+
+            .h2 {
+                text-align: center;
+                margin: 0 auto;
+                color: v.$color_0; //変更する場所
+            }
+
+            .h2_eng {
+                color: v.$color_1; //変更する場所
+
+                &:after {
+                    left: 50%;
+                    transform: translateX(-50%);
+                    max-width: 700px;
+                    width: 90%;
+
+                    @include f.mq750 {
+                        width: 85%;
+                    }
+                }
+            }
+        }
+
+        .list {
+            margin: 25px auto 0;
+            width: 90%;
+            max-width: 700px;
+
+            @include f.mq750 {
+                width: 85%;
+            }
+
+            .row {
+                display: flex;
+                height: 70px;
+                align-items: center;
+                border-bottom: 1px solid #000000; //変更する場所
+
+                .title {
+                    display: block;
+                    width: 100px;
+                    white-space: nowrap;
+                    //--------------------------------------------------
+                    font-family: 'Noto Sans JP';
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 16px;
+                    line-height: 23px;
+                    letter-spacing: 0.08em;
+                    color: v.$color_1;
+
+                    //--------------------------------------------------
+                    @include f.mq500() {
+                        font-size: 16px; //変更する場所
+                    }
+                }
+
+                .text {
+                    margin-left: 10%;
+                    white-space: nowrap;
+                    //--------------------------------------------------
+                    font-family: 'Noto Sans JP';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 29px;
+                    /* ボックスの高さと同一、または180% */
+                    letter-spacing: 0.08em;
+                    color: v.$color_0;
+
+                    //--------------------------------------------------
+                    @include f.mq500() {
+                        margin-left: 20%;
+                        font-size: 16px; //変更する場所
+                    }
+                }
+
+                .link_div {
+                    margin-left: 10%;
+
+                    @include f.mq500() {
+                        margin-left: 20%;
+                    }
+                }
+
+                .link {
+                    width: fit-content;
+
+                    .text {
+                        margin-left: 0;
+                    }
+
+                    &:hover {
+                        .text {
+                            //--------------------------------------------------
+                            color: v.$color_1;
+                            //--------------------------------------------------
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//==============================================================
+//      insta
+.insta_section {
+    margin-top: 60px;
+    width: 100%;
+    overflow: hidden;
+
+    @include f.mq1000 {
+        margin-top: 100px;
+    }
+
+    .inner {
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+        width: 90%;
+        max-width: v.$max_width_section;
+        flex-direction: column;
+
+        @include f.mq1000 {
+            flex-direction: row;
+        }
+
+        .textarea {
+            margin-top: 0;
+            padding: 38px 20px;
+            height: fit-content;
+            background-color: #fafafa;
+
+            @include f.mq1000 {
+                margin-top: 130px;
+                padding: 40px 40px;
+            }
+
+            .text {
+                margin-top: 30px;
+            }
+        }
+    }
+
+    .instagram {
+        margin: 0 auto;
+    }
+}
